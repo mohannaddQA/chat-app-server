@@ -12,7 +12,7 @@ const app = express()
 const server = http.createServer(app)
 const io = new Server(server, {
     cors: {
-        origin: 'https://chat-app-client-48kp.onrender.com/',
+        origin: '*',
         credentials: true,  // Allow credentials (cookies, authorization headers, etc.)
         methods: 'GET,POST,PUT,DELETE',  // Specify allowed methods
         allowedHeaders: 'Content-Type, Authorization'  // Specify allowed headers
