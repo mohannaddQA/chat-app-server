@@ -8,10 +8,7 @@ const { app, server } = require('./socket/index')
 
 // const app = express()
 const corsOptions = {
-    origin: function (origin, callback) {
-      // Allow requests from any origin by reflecting the request's origin
-      callback(null, origin || '*');
-    },
+    origin: '*',
     credentials: true,  // Allow credentials (cookies, authorization headers, etc.)
     methods: 'GET,POST,PUT,DELETE',  // Specify allowed methods
     allowedHeaders: 'Content-Type, Authorization'  // Specify allowed headers
