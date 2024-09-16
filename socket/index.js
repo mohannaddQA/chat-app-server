@@ -10,12 +10,7 @@ const app = express()
 
 /***socket connection */
 const server = http.createServer(app)
-const io = new Server(server,{
-    cors : {
-        origin : true,
-        credentials : true
-    }
-})
+const io = new Server(server)
 
 /***
  * socket running at http://localhost:8080/
