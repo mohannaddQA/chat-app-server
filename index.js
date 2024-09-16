@@ -8,12 +8,12 @@ const { app, server } = require('./socket/index')
 
 // const app = express()
 const corsOptions = {
-    origin: 'https://chat-app-client-48kp.onrender.com',
+    // origin: 'https://chat-app-client-48kp.onrender.com',
     credentials: true,  // Allow credentials (cookies, authorization headers, etc.)
 
 };
 
-app.use(cors());  // Apply the CORS middleware
+app.use(cors(corsOptions));  // Apply the CORS middleware
 app.use(express.json())
 app.use(cookiesParser())
 
