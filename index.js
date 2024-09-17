@@ -7,13 +7,14 @@ const cookiesParser = require('cookie-parser')
 const { app, server } = require('./socket/index')
 
 // const app = express()
-const corsOptions = {
-    // origin: 'https://chat-app-client-48kp.onrender.com',
-    credentials: true,  // Allow credentials (cookies, authorization headers, etc.)
 
-};
 
-app.use(cors(corsOptions));  // Apply the CORS middleware
+app.use(cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true
+}));
+
+// Apply the CORS middleware
 app.use(express.json())
 app.use(cookiesParser())
 
